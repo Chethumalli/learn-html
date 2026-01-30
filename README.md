@@ -15,7 +15,7 @@ GitHub
 
 From the repository file list (also visible in the GitHub UI):
 
-birthday_website/ (folder)
+TASK 1 - birthday_website/ (folder)
 
 fusion kitchen/ (folder)
 
@@ -39,3 +39,4 @@ Helps people understand why it exists
 
 Often includes installation / usage / contribution info
 …but in this case it’s just a short description with no additional sections. 
+
