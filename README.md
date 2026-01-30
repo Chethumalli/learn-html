@@ -19,7 +19,7 @@ TASK 1 - birthday_website/ (folder)
 
 TASK 2 - fusion kitchen/ (folder)
 
-sample login page/ (folder)
+TASK 3 - sample login page/ (folder)
 
 task tracker/ (folder)
 
@@ -39,5 +39,6 @@ Helps people understand why it exists
 
 Often includes installation / usage / contribution info
 …but in this case it’s just a short description with no additional sections. 
+
 
 
