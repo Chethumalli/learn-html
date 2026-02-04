@@ -1,5 +1,5 @@
 
-Sample Website – HTML Template
+### Sample Website – HTML Template
 
 Description:
 A simple, responsive HTML website template for beginners and quick prototyping.
@@ -37,6 +37,7 @@ Helps people understand why it exists
 
 Often includes installation / usage / contribution info
 …but in this case it’s just a short description with no additional sections. 
+
 
 
 
