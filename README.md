@@ -25,9 +25,7 @@ README.md
 
 index.html
 These look like example HTML project folders and a main HTML file. 
-GitHub
-
-📌 What’s a README.md
+Github
 
 In GitHub projects, a README.md file:
 
@@ -37,6 +35,7 @@ Helps people understand why it exists
 
 Often includes installation / usage / contribution info
 …but in this case it’s just a short description with no additional sections. 
+
 
 
 
