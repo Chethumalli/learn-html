@@ -1,6 +1,4 @@
-📄 README contents (as shown on the repo page)
 
-Title:
 Sample Website – HTML Template
 
 Description:
@@ -39,6 +37,7 @@ Helps people understand why it exists
 
 Often includes installation / usage / contribution info
 …but in this case it’s just a short description with no additional sections. 
+
 
 
 
