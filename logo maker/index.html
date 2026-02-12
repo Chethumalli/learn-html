@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chethan AI Logo Studio</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Montserrat:wght@700&family=Pacifico&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    width: 1100px;
+    display: flex;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.4);
+}
+
+.controls {
+    width: 40%;
+    padding: 25px;
+    background: #f4f6f9;
+    overflow-y: auto;
+}
+
+.controls h2 {
+    margin-bottom: 15px;
+}
+
+.controls input,
+.controls select,
+.controls button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.controls button {
+    background: #2c5364;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.controls button:hover {
+    background: #203a43;
+}
+
+.preview-section {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-preview {
+    width: 420px;
+    height: 420px;
+    background: #eeeeee;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: all 0.3s ease;
+}
+
+.logo-text {
+    font-size: 38px;
+    font-weight: bold;
+    z-index: 2;
+}
+
+.logo-slogan {
+    font-size: 16px;
+    opacity: 0.7;
+}
+
+.logo-preview img {
+    max-width: 150px;
+    position: absolute;
+    cursor: move;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+<div class="controls">
+
+<h2>AI Logo Studio</h2>
+
+<input type="text" id="logoText" placeholder="Company Name" oninput="updateLogo()">
+<input type="text" id="sloganText" placeholder="Slogan" oninput="updateLogo()">
+
+<label>Text Color</label>
+<input type="color" id="textColor" value="#000000" onchange="updateLogo()">
+
+<label>Background Color</label>
+<input type="color" id="bgColor" value="#eeeeee" onchange="updateLogo()">
+
+<label>Gradient Background</label>
+<input type="color" id="grad1" value="#ff7e5f">
+<input type="color" id="grad2" value="#feb47b">
+<button onclick="applyGradient()">Apply Gradient</button>
+
+<label>Shape</label>
+<select id="shapeSelect" onchange="changeShape()">
+<option value="square">Square</option>
+<option value="circle">Circle</option>
+<option value="rounded">Rounded</option>
+</select>
+
+<label>Font Style</label>
+<select id="fontStyle" onchange="updateLogo()">
+<option value="Poppins">Poppins</option>
+<option value="Montserrat">Montserrat</option>
+<option value="Pacifico">Pacifico</option>
+</select>
+
+<label>Upload Icon</label>
+<input type="file" id="imageUpload" accept="image/*">
+
+<button onclick="generateAI()">Generate AI Name</button>
+<button onclick="downloadLogo()">Download Logo</button>
+
+</div>
+
+<div class="preview-section">
+<div class="logo-preview" id="logoPreview">
+<div class="logo-text" id="logoTextPreview">Your Logo</div>
+<div class="logo-slogan" id="logoSloganPreview"></div>
+</div>
+</div>
+
+</div>
+
+<script>
+const logoPreview = document.getElementById("logoPreview");
+
+function updateLogo(){
+    document.getElementById("logoTextPreview").innerText =
+        document.getElementById("logoText").value || "Your Logo";
+
+    document.getElementById("logoSloganPreview").innerText =
+        document.getElementById("sloganText").value;
+
+    document.getElementById("logoTextPreview").style.color =
+        document.getElementById("textColor").value;
+
+    document.getElementById("logoTextPreview").style.fontFamily =
+        document.getElementById("fontStyle").value;
+
+    logoPreview.style.background =
+        document.getElementById("bgColor").value;
+}
+
+function applyGradient(){
+    const c1 = document.getElementById("grad1").value;
+    const c2 = document.getElementById("grad2").value;
+    logoPreview.style.background = `linear-gradient(135deg, ${c1}, ${c2})`;
+}
+
+function changeShape(){
+    const shape = document.getElementById("shapeSelect").value;
+    if(shape === "circle"){
+        logoPreview.style.borderRadius = "50%";
+    } else if(shape === "rounded"){
+        logoPreview.style.borderRadius = "30px";
+    } else {
+        logoPreview.style.borderRadius = "0";
+    }
+}
+
+// AI Name Generator (Simple Smart Logic)
+function generateAI(){
+    const industries = ["Tech","Digital","Creative","Solutions","Labs","Studio","Hub","Global"];
+    const adjectives = ["Nova","Spark","Prime","Vision","Next","Zen","Pixel","Core"];
+    const randomName =
+        adjectives[Math.floor(Math.random()*adjectives.length)] +
+        industries[Math.floor(Math.random()*industries.length)];
+
+    document.getElementById("logoText").value = randomName;
+    document.getElementById("sloganText").value = "Innovate Your Future";
+    updateLogo();
+}
+
+// Image Upload
+document.getElementById("imageUpload").addEventListener("change", function(){
+    const file = this.files[0];
+    if(!file) return;
+
+    const reader = new FileReader();
+    reader.onload = function(e){
+        const img = document.createElement("img");
+        img.src = e.target.result;
+        img.style.top = "20px";
+        img.style.left = "20px";
+        makeDraggable(img);
+        logoPreview.appendChild(img);
+    }
+    reader.readAsDataURL(file);
+});
+
+function makeDraggable(element){
+    let offsetX, offsetY, isDragging=false;
+
+    element.addEventListener("mousedown",function(e){
+        isDragging=true;
+        offsetX=e.offsetX;
+        offsetY=e.offsetY;
+    });
+
+    document.addEventListener("mousemove",function(e){
+        if(isDragging){
+            element.style.left =
+                (e.pageX - logoPreview.offsetLeft - offsetX)+"px";
+            element.style.top =
+                (e.pageY - logoPreview.offsetTop - offsetY)+"px";
+        }
+    });
+
+    document.addEventListener("mouseup",function(){
+        isDragging=false;
+    });
+}
+
+function downloadLogo(){
+    html2canvas(logoPreview).then(canvas=>{
+        const link=document.createElement("a");
+        link.download="logo.png";
+        link.href=canvas.toDataURL();
+        link.click();
+    });
+}
+</script>
+
+</body>
+</html>
