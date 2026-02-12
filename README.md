@@ -9,7 +9,7 @@ GitHub
 That’s basically the entire readme — a short summary telling users that this repository contains a simple HTML template useful for beginners. It doesn’t include detailed installation or usage instructions beyond that. 
 GitHub
 
-🧠 What the repo contains
+## 🧠 What the repo contains
 
 From the repository file list (also visible in the GitHub UI):
 
@@ -37,6 +37,7 @@ Helps people understand why it exists
 
 Often includes installation / usage / contribution info
 …but in this case it’s just a short description with no additional sections. 
+
 
 
 
