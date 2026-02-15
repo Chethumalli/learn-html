@@ -28,11 +28,6 @@ index.html
 These look like example HTML project folders and a main HTML file. 
 Github
 
-In GitHub projects, a README.md file:
-
-Explains what the project is
-
-Helps people understand why it exists
 
 
 
