@@ -25,8 +25,7 @@ TASK 5 - task tracker/ (folder)
 README.md
 
 index.html
-These look like example HTML project folders and a main HTML file. 
-Github
+
 
 
 
