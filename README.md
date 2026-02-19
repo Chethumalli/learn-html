@@ -12,9 +12,9 @@ GitHub
 
 From the repository file list (also visible in the GitHub UI):
 
-TASK 1 - birthday_website/ (folder)
+### TASK 1 - birthday_website/ (folder)
 
-TASK 2 - fusion kitchen/ (folder)
+### TASK 2 - fusion kitchen/ (folder)
 
 TASK 3 - logo maker/ (folder)
 
@@ -25,6 +25,7 @@ TASK 5 - task tracker/ (folder)
 README.md
 
 index.html
+
 
 
 
